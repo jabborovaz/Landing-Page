@@ -8,6 +8,7 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import React, { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 const { Header, Sider, Content } = Layout;
 
 const PageLayout = () => {
@@ -21,7 +22,7 @@ const PageLayout = () => {
               <div className="h-12 m-2 text-white">
                 <p className="text-xl text-center font-bold">Event Portal</p>
               </div>
-              <Menu
+              {/* <Menu
                 theme="dark"
                 mode="vertical"
                 defaultSelectedKeys={["1"]}
@@ -34,7 +35,7 @@ const PageLayout = () => {
                   {
                     key: "2",
                     icon: <VideoCameraOutlined />,
-                    label: "Events",
+                    label: "Table",
                   },
                   {
                     key: "3",
@@ -72,7 +73,16 @@ const PageLayout = () => {
                     label: "Dispute",
                   },
                 ]}
-              />
+              /> */}
+
+              <Menu theme="dark" mode="vertical" defaultSelectedKeys={["1"]}>
+                <Menu.Item>Dashboard</Menu.Item>
+                <Menu.Item>
+                  <Link to="/table" type="submit" className="hover:underline">
+                    Table
+                  </Link>
+                </Menu.Item>
+              </Menu>
             </Sider>
             <Layout className="bg-[#fff] h-screen">
               <Header
@@ -89,18 +99,29 @@ const PageLayout = () => {
                   }
                 )}
               </Header>
-              <Content>Content</Content>
+              <Content>
+                <div className="w-[700px] h-[100vh]">
+                  <Outlet />
+                </div>
+              </Content>
             </Layout>
           </Layout>
         </div>
-        <div className="h-12 flex flex-row mt-3 py-2">
+        <div className="h-12 w-full flex flex-row justify-between mt-3 pr-16 py-2">
           <div>
-            <input type="text" className="border w-40" />
-            <button className="border px-3">
+            <input type="text" className="border w-40 pb-1" />
+            <button className="border px-3 pb-1">
               <SearchOutlined />
             </button>
           </div>
-          <div></div>
+          <div className="flex flex-row space-x-3">
+            <Link to="/login" type="submit" className="hover:underline">
+              Login
+            </Link>
+            <Link to="/registration" type="submit" className="hover:underline">
+              Registration
+            </Link>
+          </div>
         </div>
       </div>
     </>
