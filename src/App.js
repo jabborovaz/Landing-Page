@@ -1,7 +1,10 @@
 import "./App.css";
 import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Login, Registration, Layout, TableRtk } from "./router/router";
+import { Login, Layout, TableRtk } from "./router/router";
+import "./App.css";
+import "antd/dist/antd.css";
+import "antd/dist/antd.variable.min.css";
 
 function App() {
   return (

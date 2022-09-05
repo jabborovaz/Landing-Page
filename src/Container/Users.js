@@ -91,7 +91,13 @@ function RTKUsers() {
             Add
           </button>
         </div> */}
-        {data.length > 0 && <Table columns={columns} dataSource={data} />}
+        {data.length > 0 && (
+          <Table
+            columns={columns}
+            dataSource={data}
+            pagination={{ pageSize: 6, showSizeChanger: false }}
+          />
+        )}
       </div>{" "}
     </>
   );

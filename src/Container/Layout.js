@@ -15,7 +15,7 @@ const PageLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
   return (
     <>
-      <div className="flex flex-row space-x-16">
+      <div className="flex flex-row h-fit space-x-16">
         <div>
           <Layout>
             <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -78,7 +78,7 @@ const PageLayout = () => {
               <Menu theme="dark" mode="vertical" defaultSelectedKeys={["1"]}>
                 <Menu.Item>Dashboard</Menu.Item>
                 <Menu.Item>
-                  <Link to="/table" type="submit" className="hover:underline">
+                  <Link to="/table" type="submit">
                     Table
                   </Link>
                 </Menu.Item>
@@ -100,14 +100,14 @@ const PageLayout = () => {
                 )}
               </Header>
               <Content>
-                <div className="w-[700px] h-[100vh]">
+                <div className="sm:w-[250px] md:w-[700px] h-fit">
                   <Outlet />
                 </div>
               </Content>
             </Layout>
           </Layout>
         </div>
-        <div className="h-12 w-full flex flex-row justify-between mt-3 pr-16 py-2">
+        <div className="h-12 w-full flex sm:flex-col md:flex-row justify-between mt-3 pr-16 py-2">
           <div>
             <input type="text" className="border w-40 pb-1" />
             <button className="border px-3 pb-1">
