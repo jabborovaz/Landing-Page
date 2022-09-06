@@ -1,7 +1,7 @@
 import "./App.css";
 import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Login, Layout, TableRtk } from "./router/router";
+import { Login, Layout, TableRtk, Dashboard } from "./router/router";
 import "./App.css";
 import "antd/dist/antd.css";
 import "antd/dist/antd.variable.min.css";
@@ -32,6 +32,15 @@ function App() {
             element={
               <Suspense fallback={<div>Loading ...</div>}>
                 <TableRtk />
+              </Suspense>
+            }
+          />
+
+          <Route
+            path="/dash"
+            element={
+              <Suspense fallback={<div>Loading ...</div>}>
+                <Dashboard />
               </Suspense>
             }
           />

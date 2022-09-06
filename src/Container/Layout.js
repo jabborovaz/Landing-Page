@@ -75,8 +75,12 @@ const PageLayout = () => {
                 ]}
               /> */}
 
-              <Menu theme="dark" mode="vertical" defaultSelectedKeys={["1"]}>
-                <Menu.Item>Dashboard</Menu.Item>
+              <Menu theme="dark" mode="vertical">
+                <Menu.Item>
+                  <Link to="/dash" type="submit">
+                    Dashboard
+                  </Link>
+                </Menu.Item>
                 <Menu.Item>
                   <Link to="/table" type="submit">
                     Table
